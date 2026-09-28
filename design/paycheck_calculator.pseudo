@@ -9,19 +9,24 @@
 # PUT (output), LET (assignment), IF, ELSE, and ENDIF where they fit your design.
 
 START paycheck_calculator
+# IT 140 Module Three Assignment
+# Paycheck Calculator Pseudocode
+#
+# This pseudocode calculates an employee's weekly paycheck.
+# The employee earns $20 per hour for the first 40 hours
+# and $30 per hour for each hour above 40.
 
-    TODO: Obtain the required program input.
+START paycheck_calculator
 
-    IF TODO: Specify the condition for the applicable pay rule.
-        TODO: List the processing steps for the true decision path.
+    GET hours_worked
+
+    IF hours_worked > 40
+        LET overtime_hours = hours_worked - 40
+        LET regular_pay = 40 * 20
+        LET overtime_pay = overtime_hours * 30
+        LET weekly_pay = regular_pay + overtime_pay
     ELSE
-        TODO: List the processing steps for the false decision path.
+        LET weekly_pay = hours_worked * 20
     ENDIF
 
-    TODO: Output the calculated weekly paycheck.
-
-END paycheck_calculator
-
-
-# === References ===
-# TODO: List outside sources or assistance you actually used, or delete this line.
+    PUT weekly_pay
